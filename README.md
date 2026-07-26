@@ -15,9 +15,12 @@
 <h4>Contato</h4>
 
 <p>
-  <a href="https://www.linkedin.com/in/rodrigo-luna-barcelos-87a44a195/">LinkedIn</a>
-  <br>
-  <a href="mailto:rodrigolunabarcelos@gmail.com">Email</a>
+  <a href="https://www.linkedin.com/in/rodrigo-luna-barcelos-87a44a195/">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <a href="mailto:rodrigolunabarcelos@gmail.com">
+    <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
 </p>
 
 <h3 align="center">Com o que eu trabalho</h3>
