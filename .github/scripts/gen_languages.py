@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
-"""Generate a styled "Linguagens mais usadas" SVG from the user's real public repos.
+"""Generate a styled "Linguagens mais usadas" SVG from the user's real repos.
 
-Dynamic: aggregates language bytes across all owned, non-fork public repos via the
-GitHub API, so newly added repos show up automatically on the next run.
+Dynamic: aggregates language bytes across the repos the token can see, so newly
+added repos appear automatically on the next run. When the token has `repo`
+scope (and `read:org` for org repos), private repos are included in the totals —
+only aggregate percentages are shown, never any code. A caption notes when
+private repos are counted.
 """
 import json
 import math
@@ -10,7 +13,6 @@ import os
 import urllib.request
 
 TOKEN = os.environ["GH_TOKEN"]
-USER = os.environ.get("GH_USER", "rodrigob-dev")
 OUT = os.environ.get("OUT", "profile/languages.svg")
 
 # GitHub linguist colors for common languages (fallback = grey).
@@ -24,7 +26,6 @@ COLORS = {
     "Kotlin": "#A97BFF", "Swift": "#F05138", "MDX": "#fcb32c",
 }
 OTHER = "#8b949e"
-# Nicer display names for a few languages.
 DISPLAY = {"PLpgSQL": "PL/pgSQL"}
 
 LIMIT = 6          # top languages shown individually; rest grouped into "Outras"
@@ -42,10 +43,12 @@ def api(url):
 
 
 def all_repos():
+    """Repos the token can access: owned (public+private) and org repos."""
     repos, page = [], 1
     while True:
-        batch = api(f"https://api.github.com/users/{USER}/repos"
-                    f"?per_page=100&type=owner&page={page}")
+        batch = api("https://api.github.com/user/repos"
+                    "?per_page=100&visibility=all"
+                    f"&affiliation=owner,organization_member&page={page}")
         repos += batch
         if len(batch) < 100:
             return repos
@@ -57,31 +60,32 @@ def fmt(pct):
 
 
 def build_segments():
-    totals = {}
+    totals, has_private = {}, False
     for repo in all_repos():
         if repo.get("fork"):
             continue
+        if repo.get("private"):
+            has_private = True
         for lang, size in api(f"https://api.github.com/repos/"
                               f"{repo['full_name']}/languages").items():
             totals[lang] = totals.get(lang, 0) + size
 
     total = sum(totals.values())
     if total == 0:
-        return [], 0
+        return [], 0, has_private
     ordered = sorted(totals.items(), key=lambda kv: -kv[1])
     segs = [[name, val, COLORS.get(name, OTHER)] for name, val in ordered[:LIMIT]]
     rest = ordered[LIMIT:]
     if rest:
         segs.append(["Outras", sum(v for _, v in rest), OTHER])
-    return segs, total
+    return segs, total, has_private
 
 
-def render(segs, total):
-    if total == 0:
-        rows = 1
-    else:
-        rows = math.ceil(len(segs) / 2)
-    height = 72 + rows * 28
+def render(segs, total, has_private):
+    caption = "inclui repositórios privados" if has_private else ""
+    cap_h = 18 if caption else 0
+    rows = 1 if total == 0 else math.ceil(len(segs) / 2)
+    height = 72 + cap_h + rows * 28
 
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="480" height="{height}" '
@@ -89,53 +93,54 @@ def render(segs, total):
         f'aria-label="Linguagens mais usadas">',
         '<style>'
         '.t{font:600 16px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:#0366d6}'
+        '.c{font:400 11px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:#8b949e}'
         '.l{font:400 13px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:#24292f}'
         '.p{font:600 13px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:#57606a}'
         '</style>',
         f'<rect x="0.5" y="0.5" width="479" height="{height - 1}" rx="6" '
         f'fill="#ffffff" stroke="#e1e4e8"/>',
         '<text x="24" y="34" class="t">Linguagens mais usadas</text>',
-        '<clipPath id="bar"><rect x="24" y="52" width="432" height="10" rx="5"/></clipPath>',
     ]
+    if caption:
+        parts.append(f'<text x="24" y="48" class="c">{caption}</text>')
+
+    bar_y = 52 + cap_h
+    parts.append(f'<clipPath id="bar"><rect x="24" y="{bar_y}" width="432" height="10" rx="5"/></clipPath>')
 
     if total == 0:
-        parts.append('<text x="24" y="80" class="l">Sem dados de linguagem ainda.</text>')
+        parts.append(f'<text x="24" y="{bar_y + 28}" class="l">Sem dados de linguagem ainda.</text>')
         parts.append('</svg>')
         return "\n".join(parts)
 
-    # segmented bar
     parts.append('<g clip-path="url(#bar)">')
     x = float(BAR_X)
     for i, (name, val, color) in enumerate(segs):
-        w = BAR_W * val / total
-        # avoid sub-pixel gaps: last segment fills to the end
-        w = (BAR_X + BAR_W - x) if i == len(segs) - 1 else w
-        parts.append(f'<rect x="{x:.1f}" y="52" width="{w:.1f}" height="10" fill="{color}"/>')
+        w = (BAR_X + BAR_W - x) if i == len(segs) - 1 else BAR_W * val / total
+        parts.append(f'<rect x="{x:.1f}" y="{bar_y}" width="{w:.1f}" height="10" fill="{color}"/>')
         x += w
     parts.append('</g>')
 
-    # legend (two columns)
     cols = [(30, 42), (250, 262)]
+    legend_y0 = bar_y + 34
     for i, (name, val, color) in enumerate(segs):
         cx, tx = cols[i % 2]
-        cy = 86 + (i // 2) * 28
+        cy = legend_y0 + (i // 2) * 28
         label = DISPLAY.get(name, name)
-        pct = fmt(100 * val / total)
         parts.append(f'<circle cx="{cx}" cy="{cy}" r="5" fill="{color}"/>')
         parts.append(f'<text x="{tx}" y="{cy + 4}" class="l">{label} '
-                     f'<tspan class="p">{pct}</tspan></text>')
+                     f'<tspan class="p">{fmt(100 * val / total)}</tspan></text>')
 
     parts.append('</svg>')
     return "\n".join(parts)
 
 
 def main():
-    segs, total = build_segments()
-    svg = render(segs, total)
+    segs, total, has_private = build_segments()
+    svg = render(segs, total, has_private)
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w", encoding="utf-8") as f:
         f.write(svg + "\n")
-    print(f"Wrote {OUT} ({len(segs)} languages, {total} bytes total)")
+    print(f"Wrote {OUT}: {len(segs)} langs, {total} bytes, private={has_private}")
 
 
 if __name__ == "__main__":
