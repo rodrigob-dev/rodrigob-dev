@@ -1,16 +1,10 @@
-<h1>Rodrigo Luna Barcelos</h1> 
+<h1>Rodrigo Luna Barcelos</h1>
 
 <p><b>Computer Engineering @ Columbia University</b> &nbsp;·&nbsp; Data Engineering Intern @ Zoox Smart Data</p>
 
 <p>
   Computer Engineering student at Columbia University (Fu Foundation School of Engineering and Applied Science), graduating 2029. Working at the intersection of software and data — currently building data integrations in Python/FastAPI at Zoox Smart Data. Interested in software engineering, data infrastructure, and systems.
 </p>
-
-<div align="center">
-  <img width="62%" src="https://github-readme-stats.vercel.app/api?username=rodrigob-dev&show_icons=true&hide_border=true&count_private=true&theme=github_dark" alt="Atividade no GitHub" />
-  <br>
-  <img width="62%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rodrigob-dev&layout=compact&hide_border=true&langs_count=8&theme=github_dark" alt="Linguagens mais usadas" />
-</div>
 
 <h4>Contato</h4>
 
@@ -54,4 +48,3 @@
   <img alt="linux" height="42" width="52" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"/>
 
 </div>
-<!-- profile -->
