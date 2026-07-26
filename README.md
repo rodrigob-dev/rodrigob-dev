@@ -8,6 +8,8 @@
 
 <div align="center">
   <img width="62%" src="profile/metrics.svg" alt="Estatísticas do GitHub" />
+  <br>
+  <img width="62%" src="profile/languages.svg" alt="Linguagens mais usadas" />
 </div>
 
 <h4>Contato</h4>
