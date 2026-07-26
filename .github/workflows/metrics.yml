@@ -1,0 +1,20 @@
+name: metrics
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 9 * * 1"
+permissions:
+  contents: write
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          user: rodrigob-dev
+          filename: profile/metrics.svg
+          base: header, activity, repositories
+          config_timezone: America/Sao_Paulo
+          output_action: commit
+          committer_branch: main
