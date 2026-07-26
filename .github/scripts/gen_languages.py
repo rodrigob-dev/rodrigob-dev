@@ -82,7 +82,7 @@ def build_segments():
 
 
 def render(segs, total, has_private):
-    caption = "inclui repositórios privados" if has_private else ""
+    caption = "includes private repos" if has_private else ""
     cap_h = 18 if caption else 0
     rows = 1 if total == 0 else math.ceil(len(segs) / 2)
     height = 72 + cap_h + rows * 28
@@ -90,7 +90,7 @@ def render(segs, total, has_private):
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="480" height="{height}" '
         f'viewBox="0 0 480 {height}" fill="none" role="img" '
-        f'aria-label="Linguagens mais usadas">',
+        f'aria-label="Most used languages">',
         '<style>'
         '.t{font:600 16px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:#0366d6}'
         '.c{font:400 11px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:#8b949e}'
@@ -99,7 +99,7 @@ def render(segs, total, has_private):
         '</style>',
         f'<rect x="0.5" y="0.5" width="479" height="{height - 1}" rx="6" '
         f'fill="#ffffff" stroke="#e1e4e8"/>',
-        '<text x="24" y="34" class="t">Linguagens mais usadas</text>',
+        '<text x="24" y="34" class="t">Most used languages</text>',
     ]
     if caption:
         parts.append(f'<text x="24" y="48" class="c">{caption}</text>')
@@ -108,7 +108,7 @@ def render(segs, total, has_private):
     parts.append(f'<clipPath id="bar"><rect x="24" y="{bar_y}" width="432" height="10" rx="5"/></clipPath>')
 
     if total == 0:
-        parts.append(f'<text x="24" y="{bar_y + 28}" class="l">Sem dados de linguagem ainda.</text>')
+        parts.append(f'<text x="24" y="{bar_y + 28}" class="l">No language data yet.</text>')
         parts.append('</svg>')
         return "\n".join(parts)
 
