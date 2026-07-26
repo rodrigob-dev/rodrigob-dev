@@ -1,4 +1,4 @@
-<h1>Rodrigo Luna Barcelos</h1>
+<h1>Rodrigo Luna Barcelos</h1> 
 
 <p><b>Computer Engineering @ Columbia University</b> &nbsp;·&nbsp; Data Engineering Intern @ Zoox Smart Data</p>
 
