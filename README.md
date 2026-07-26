@@ -17,8 +17,6 @@
 <p>
   <a href="https://www.linkedin.com/in/rodrigo-luna-barcelos-87a44a195/">LinkedIn</a>
   <br>
-  <a href="https://github.com/rodrigob-dev">GitHub</a>
-  <br>
   <a href="mailto:rodrigolunabarcelos@gmail.com">Email</a>
 </p>
 
