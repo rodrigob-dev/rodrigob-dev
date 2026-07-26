@@ -6,6 +6,10 @@
   Computer Engineering student at Columbia University (Fu Foundation School of Engineering and Applied Science), graduating 2029. Working at the intersection of software and data — currently building data integrations in Python/FastAPI at Zoox Smart Data. Interested in software engineering, data infrastructure, and systems.
 </p>
 
+<div align="center">
+  <img width="62%" src="profile/metrics.svg" alt="Estatísticas do GitHub" />
+</div>
+
 <h4>Contato</h4>
 
 <p>
