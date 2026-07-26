@@ -16,7 +16,7 @@ jobs:
       - name: Generate languages card
         run: python .github/scripts/gen_languages.py
         env:
-          GH_TOKEN: ${{ secrets.METRICS_TOKEN }}
+          GH_TOKEN: ${{ secrets.METRICS2 }}
           GH_USER: rodrigob-dev
       - name: Commit languages card
         run: |
@@ -27,7 +27,7 @@ jobs:
           git push
       - uses: lowlighter/metrics@latest
         with:
-          token: ${{ secrets.METRICS_TOKEN }}
+          token: ${{ secrets.METRICS2 }}
           user: rodrigob-dev
           filename: profile/metrics.svg
           base: header, activity, repositories
