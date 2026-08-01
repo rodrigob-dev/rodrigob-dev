@@ -5,26 +5,26 @@
 <text x="24" y="48" class="c">includes private repos</text>
 <clipPath id="bar"><rect x="24" y="70" width="432" height="10" rx="5"/></clipPath>
 <g clip-path="url(#bar)">
-<rect x="24.0" y="70" width="128.3" height="10" fill="#3572A5"/>
-<rect x="152.3" y="70" width="84.9" height="10" fill="#f1e05a"/>
-<rect x="237.2" y="70" width="70.1" height="10" fill="#3178c6"/>
-<rect x="307.3" y="70" width="63.9" height="10" fill="#DA5B0B"/>
-<rect x="371.2" y="70" width="49.6" height="10" fill="#41b883"/>
-<rect x="420.8" y="70" width="31.0" height="10" fill="#e34c26"/>
-<rect x="451.8" y="70" width="4.2" height="10" fill="#8b949e"/>
+<rect x="24.0" y="70" width="158.0" height="10" fill="#3572A5"/>
+<rect x="182.0" y="70" width="96.1" height="10" fill="#f1e05a"/>
+<rect x="278.1" y="70" width="82.9" height="10" fill="#3178c6"/>
+<rect x="361.0" y="70" width="54.9" height="10" fill="#41b883"/>
+<rect x="415.9" y="70" width="35.0" height="10" fill="#e34c26"/>
+<rect x="450.9" y="70" width="2.1" height="10" fill="#563d7c"/>
+<rect x="453.0" y="70" width="3.0" height="10" fill="#8b949e"/>
 </g>
 <circle cx="30" cy="104" r="5" fill="#3572A5"/>
-<text x="42" y="108" class="l">Python <tspan class="p">29,7%</tspan></text>
+<text x="42" y="108" class="l">Python <tspan class="p">36,6%</tspan></text>
 <circle cx="250" cy="104" r="5" fill="#f1e05a"/>
-<text x="262" y="108" class="l">JavaScript <tspan class="p">19,7%</tspan></text>
+<text x="262" y="108" class="l">JavaScript <tspan class="p">22,2%</tspan></text>
 <circle cx="30" cy="132" r="5" fill="#3178c6"/>
-<text x="42" y="136" class="l">TypeScript <tspan class="p">16,2%</tspan></text>
-<circle cx="250" cy="132" r="5" fill="#DA5B0B"/>
-<text x="262" y="136" class="l">Jupyter Notebook <tspan class="p">14,8%</tspan></text>
-<circle cx="30" cy="160" r="5" fill="#41b883"/>
-<text x="42" y="164" class="l">Vue <tspan class="p">11,5%</tspan></text>
-<circle cx="250" cy="160" r="5" fill="#e34c26"/>
-<text x="262" y="164" class="l">HTML <tspan class="p">7,2%</tspan></text>
+<text x="42" y="136" class="l">TypeScript <tspan class="p">19,2%</tspan></text>
+<circle cx="250" cy="132" r="5" fill="#41b883"/>
+<text x="262" y="136" class="l">Vue <tspan class="p">12,7%</tspan></text>
+<circle cx="30" cy="160" r="5" fill="#e34c26"/>
+<text x="42" y="164" class="l">HTML <tspan class="p">8,1%</tspan></text>
+<circle cx="250" cy="160" r="5" fill="#563d7c"/>
+<text x="262" y="164" class="l">CSS <tspan class="p">0,5%</tspan></text>
 <circle cx="30" cy="188" r="5" fill="#8b949e"/>
-<text x="42" y="192" class="l">Outras <tspan class="p">1,0%</tspan></text>
+<text x="42" y="192" class="l">Outras <tspan class="p">0,7%</tspan></text>
 </svg>
