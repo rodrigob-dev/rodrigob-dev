@@ -31,6 +31,10 @@ jobs:
           user: rodrigob-dev
           filename: profile/metrics.svg
           base: header, activity, repositories
+          # Without this, the commit count falls back to the commit-search index,
+          # which is approximate over private repos: it reported 6, 49, 180, 185
+          # and 327 on consecutive days for the same ~185 commits.
+          base_indepth: yes
           config_timezone: America/Sao_Paulo
           output_action: commit
           committer_branch: main
