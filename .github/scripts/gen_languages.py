@@ -36,6 +36,12 @@ BAR_X, BAR_W = 24, 432
 # the whole card), and day-to-day work can never move the numbers.
 REPO_CAP = 0.10
 
+# Languages excluded before anything else is measured. Notebooks store their
+# cell output — base64 images included — inside the .ipynb, so linguist counts
+# one notebook as heavily as hundreds of source files. That is file format, not
+# signal about what I write.
+IGNORED = {"Jupyter Notebook"}
+
 
 def api(url):
     req = urllib.request.Request(url, headers={
@@ -76,8 +82,12 @@ def build_segments():
             continue
         if repo.get("private"):
             has_private = True
-        langs = api(f"https://api.github.com/repos/"
-                    f"{repo['full_name']}/languages")
+        langs = {lang: size
+                 for lang, size in api(f"https://api.github.com/repos/"
+                                       f"{repo['full_name']}/languages").items()
+                 if lang not in IGNORED}
+        # Dropped before sizing, so a repo made only of ignored languages does
+        # not exist as far as the cap and the grand total are concerned.
         if langs:
             per_repo.append(langs)
 
