@@ -31,6 +31,11 @@ DISPLAY = {"PLpgSQL": "PL/pgSQL"}
 LIMIT = 6          # top languages shown individually; rest grouped into "Outras"
 BAR_X, BAR_W = 24, 432
 
+# No single repo may contribute more than this share of the total. Without it a
+# large legacy monorepo drowns out everything else (one Vue front-end was 41% of
+# the whole card), and day-to-day work can never move the numbers.
+REPO_CAP = 0.10
+
 
 def api(url):
     req = urllib.request.Request(url, headers={
@@ -43,12 +48,17 @@ def api(url):
 
 
 def all_repos():
-    """Repos the token can access: owned (public+private) and org repos."""
+    """Repos the token can access: owned, org repos, and ones I collaborate on.
+
+    `collaborator` matters: side projects living under someone else's account
+    are invisible without it, however much of the code is mine.
+    """
     repos, page = [], 1
     while True:
         batch = api("https://api.github.com/user/repos"
                     "?per_page=100&visibility=all"
-                    f"&affiliation=owner,organization_member&page={page}")
+                    f"&affiliation=owner,organization_member,collaborator"
+                    f"&page={page}")
         repos += batch
         if len(batch) < 100:
             return repos
@@ -60,15 +70,26 @@ def fmt(pct):
 
 
 def build_segments():
-    totals, has_private = {}, False
+    per_repo, has_private = [], False
     for repo in all_repos():
         if repo.get("fork"):
             continue
         if repo.get("private"):
             has_private = True
-        for lang, size in api(f"https://api.github.com/repos/"
-                              f"{repo['full_name']}/languages").items():
-            totals[lang] = totals.get(lang, 0) + size
+        langs = api(f"https://api.github.com/repos/"
+                    f"{repo['full_name']}/languages")
+        if langs:
+            per_repo.append(langs)
+
+    # Weight each repo down to at most REPO_CAP of the grand total, so the card
+    # reflects the spread of what I work on rather than which repo is biggest.
+    grand = sum(sum(langs.values()) for langs in per_repo)
+    totals = {}
+    for langs in per_repo:
+        size = sum(langs.values())
+        weight = min(1.0, REPO_CAP * grand / size) if grand else 1.0
+        for lang, value in langs.items():
+            totals[lang] = totals.get(lang, 0) + value * weight
 
     total = sum(totals.values())
     if total == 0:
@@ -140,7 +161,8 @@ def main():
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w", encoding="utf-8") as f:
         f.write(svg + "\n")
-    print(f"Wrote {OUT}: {len(segs)} langs, {total} bytes, private={has_private}")
+    print(f"Wrote {OUT}: {len(segs)} langs, {total:,.0f} weighted bytes "
+          f"(cap {REPO_CAP:.0%}/repo), private={has_private}")
 
 
 if __name__ == "__main__":
