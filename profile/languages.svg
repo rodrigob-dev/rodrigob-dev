@@ -5,24 +5,24 @@
 <text x="24" y="48" class="c">includes private repos</text>
 <clipPath id="bar"><rect x="24" y="70" width="432" height="10" rx="5"/></clipPath>
 <g clip-path="url(#bar)">
-<rect x="24.0" y="70" width="158.0" height="10" fill="#3572A5"/>
-<rect x="182.0" y="70" width="96.1" height="10" fill="#f1e05a"/>
-<rect x="278.1" y="70" width="82.9" height="10" fill="#3178c6"/>
-<rect x="361.0" y="70" width="54.9" height="10" fill="#41b883"/>
-<rect x="415.9" y="70" width="35.0" height="10" fill="#e34c26"/>
+<rect x="24.0" y="70" width="157.7" height="10" fill="#3572A5"/>
+<rect x="181.7" y="70" width="96.3" height="10" fill="#f1e05a"/>
+<rect x="278.0" y="70" width="83.8" height="10" fill="#3178c6"/>
+<rect x="361.8" y="70" width="54.9" height="10" fill="#41b883"/>
+<rect x="416.6" y="70" width="34.3" height="10" fill="#e34c26"/>
 <rect x="450.9" y="70" width="2.1" height="10" fill="#563d7c"/>
 <rect x="453.0" y="70" width="3.0" height="10" fill="#8b949e"/>
 </g>
 <circle cx="30" cy="104" r="5" fill="#3572A5"/>
-<text x="42" y="108" class="l">Python <tspan class="p">36,6%</tspan></text>
+<text x="42" y="108" class="l">Python <tspan class="p">36,5%</tspan></text>
 <circle cx="250" cy="104" r="5" fill="#f1e05a"/>
-<text x="262" y="108" class="l">JavaScript <tspan class="p">22,2%</tspan></text>
+<text x="262" y="108" class="l">JavaScript <tspan class="p">22,3%</tspan></text>
 <circle cx="30" cy="132" r="5" fill="#3178c6"/>
-<text x="42" y="136" class="l">TypeScript <tspan class="p">19,2%</tspan></text>
+<text x="42" y="136" class="l">TypeScript <tspan class="p">19,4%</tspan></text>
 <circle cx="250" cy="132" r="5" fill="#41b883"/>
 <text x="262" y="136" class="l">Vue <tspan class="p">12,7%</tspan></text>
 <circle cx="30" cy="160" r="5" fill="#e34c26"/>
-<text x="42" y="164" class="l">HTML <tspan class="p">8,1%</tspan></text>
+<text x="42" y="164" class="l">HTML <tspan class="p">7,9%</tspan></text>
 <circle cx="250" cy="160" r="5" fill="#563d7c"/>
 <text x="262" y="164" class="l">CSS <tspan class="p">0,5%</tspan></text>
 <circle cx="30" cy="188" r="5" fill="#8b949e"/>
