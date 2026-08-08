@@ -5,26 +5,26 @@
 <text x="24" y="48" class="c">includes private repos</text>
 <clipPath id="bar"><rect x="24" y="70" width="432" height="10" rx="5"/></clipPath>
 <g clip-path="url(#bar)">
-<rect x="24.0" y="70" width="152.4" height="10" fill="#3572A5"/>
-<rect x="176.4" y="70" width="95.5" height="10" fill="#f1e05a"/>
-<rect x="271.8" y="70" width="92.9" height="10" fill="#3178c6"/>
-<rect x="364.7" y="70" width="53.6" height="10" fill="#41b883"/>
-<rect x="418.4" y="70" width="32.7" height="10" fill="#e34c26"/>
-<rect x="451.0" y="70" width="2.1" height="10" fill="#563d7c"/>
-<rect x="453.1" y="70" width="2.9" height="10" fill="#8b949e"/>
+<rect x="24.0" y="70" width="149.0" height="10" fill="#3572A5"/>
+<rect x="173.0" y="70" width="98.2" height="10" fill="#3178c6"/>
+<rect x="271.2" y="70" width="94.7" height="10" fill="#f1e05a"/>
+<rect x="365.9" y="70" width="53.0" height="10" fill="#41b883"/>
+<rect x="418.9" y="70" width="32.0" height="10" fill="#e34c26"/>
+<rect x="450.8" y="70" width="2.4" height="10" fill="#563d7c"/>
+<rect x="453.2" y="70" width="2.8" height="10" fill="#8b949e"/>
 </g>
 <circle cx="30" cy="104" r="5" fill="#3572A5"/>
-<text x="42" y="108" class="l">Python <tspan class="p">35,3%</tspan></text>
-<circle cx="250" cy="104" r="5" fill="#f1e05a"/>
-<text x="262" y="108" class="l">JavaScript <tspan class="p">22,1%</tspan></text>
-<circle cx="30" cy="132" r="5" fill="#3178c6"/>
-<text x="42" y="136" class="l">TypeScript <tspan class="p">21,5%</tspan></text>
+<text x="42" y="108" class="l">Python <tspan class="p">34,5%</tspan></text>
+<circle cx="250" cy="104" r="5" fill="#3178c6"/>
+<text x="262" y="108" class="l">TypeScript <tspan class="p">22,7%</tspan></text>
+<circle cx="30" cy="132" r="5" fill="#f1e05a"/>
+<text x="42" y="136" class="l">JavaScript <tspan class="p">21,9%</tspan></text>
 <circle cx="250" cy="132" r="5" fill="#41b883"/>
-<text x="262" y="136" class="l">Vue <tspan class="p">12,4%</tspan></text>
+<text x="262" y="136" class="l">Vue <tspan class="p">12,3%</tspan></text>
 <circle cx="30" cy="160" r="5" fill="#e34c26"/>
-<text x="42" y="164" class="l">HTML <tspan class="p">7,6%</tspan></text>
+<text x="42" y="164" class="l">HTML <tspan class="p">7,4%</tspan></text>
 <circle cx="250" cy="160" r="5" fill="#563d7c"/>
 <text x="262" y="164" class="l">CSS <tspan class="p">0,5%</tspan></text>
 <circle cx="30" cy="188" r="5" fill="#8b949e"/>
-<text x="42" y="192" class="l">Outras <tspan class="p">0,7%</tspan></text>
+<text x="42" y="192" class="l">Outras <tspan class="p">0,6%</tspan></text>
 </svg>
