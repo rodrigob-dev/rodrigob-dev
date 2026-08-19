@@ -5,18 +5,18 @@
 <text x="24" y="48" class="c">includes private repos</text>
 <clipPath id="bar"><rect x="24" y="70" width="432" height="10" rx="5"/></clipPath>
 <g clip-path="url(#bar)">
-<rect x="24.0" y="70" width="147.7" height="10" fill="#3572A5"/>
-<rect x="171.7" y="70" width="96.8" height="10" fill="#3178c6"/>
-<rect x="268.4" y="70" width="94.5" height="10" fill="#f1e05a"/>
-<rect x="363.0" y="70" width="51.5" height="10" fill="#41b883"/>
-<rect x="414.5" y="70" width="34.6" height="10" fill="#e34c26"/>
+<rect x="24.0" y="70" width="147.4" height="10" fill="#3572A5"/>
+<rect x="171.4" y="70" width="97.1" height="10" fill="#3178c6"/>
+<rect x="268.5" y="70" width="94.6" height="10" fill="#f1e05a"/>
+<rect x="363.1" y="70" width="51.5" height="10" fill="#41b883"/>
+<rect x="414.6" y="70" width="34.5" height="10" fill="#e34c26"/>
 <rect x="449.1" y="70" width="2.3" height="10" fill="#563d7c"/>
 <rect x="451.3" y="70" width="4.7" height="10" fill="#8b949e"/>
 </g>
 <circle cx="30" cy="104" r="5" fill="#3572A5"/>
-<text x="42" y="108" class="l">Python <tspan class="p">34,2%</tspan></text>
+<text x="42" y="108" class="l">Python <tspan class="p">34,1%</tspan></text>
 <circle cx="250" cy="104" r="5" fill="#3178c6"/>
-<text x="262" y="108" class="l">TypeScript <tspan class="p">22,4%</tspan></text>
+<text x="262" y="108" class="l">TypeScript <tspan class="p">22,5%</tspan></text>
 <circle cx="30" cy="132" r="5" fill="#f1e05a"/>
 <text x="42" y="136" class="l">JavaScript <tspan class="p">21,9%</tspan></text>
 <circle cx="250" cy="132" r="5" fill="#41b883"/>
