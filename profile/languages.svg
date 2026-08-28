@@ -5,12 +5,12 @@
 <text x="24" y="48" class="c">includes private repos</text>
 <clipPath id="bar"><rect x="24" y="70" width="432" height="10" rx="5"/></clipPath>
 <g clip-path="url(#bar)">
-<rect x="24.0" y="70" width="157.3" height="10" fill="#3572A5"/>
-<rect x="181.3" y="70" width="93.5" height="10" fill="#3178c6"/>
-<rect x="274.8" y="70" width="92.4" height="10" fill="#f1e05a"/>
-<rect x="367.2" y="70" width="49.5" height="10" fill="#41b883"/>
-<rect x="416.8" y="70" width="31.2" height="10" fill="#e34c26"/>
-<rect x="448.0" y="70" width="2.2" height="10" fill="#563d7c"/>
+<rect x="24.0" y="70" width="157.1" height="10" fill="#3572A5"/>
+<rect x="181.1" y="70" width="93.7" height="10" fill="#3178c6"/>
+<rect x="274.8" y="70" width="92.6" height="10" fill="#f1e05a"/>
+<rect x="367.4" y="70" width="49.6" height="10" fill="#41b883"/>
+<rect x="416.9" y="70" width="31.0" height="10" fill="#e34c26"/>
+<rect x="448.0" y="70" width="2.1" height="10" fill="#563d7c"/>
 <rect x="450.1" y="70" width="5.9" height="10" fill="#8b949e"/>
 </g>
 <circle cx="30" cy="104" r="5" fill="#3572A5"/>
