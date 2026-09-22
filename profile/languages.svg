@@ -5,13 +5,13 @@
 <text x="24" y="48" class="c">includes private repos</text>
 <clipPath id="bar"><rect x="24" y="70" width="432" height="10" rx="5"/></clipPath>
 <g clip-path="url(#bar)">
-<rect x="24.0" y="70" width="344.6" height="10" fill="#3178c6"/>
-<rect x="368.6" y="70" width="51.7" height="10" fill="#F05138"/>
-<rect x="420.3" y="70" width="9.5" height="10" fill="#e34c26"/>
-<rect x="429.8" y="70" width="7.4" height="10" fill="#f1e05a"/>
-<rect x="437.2" y="70" width="5.7" height="10" fill="#336790"/>
+<rect x="24.0" y="70" width="344.7" height="10" fill="#3178c6"/>
+<rect x="368.7" y="70" width="51.6" height="10" fill="#F05138"/>
+<rect x="420.4" y="70" width="9.5" height="10" fill="#e34c26"/>
+<rect x="429.9" y="70" width="7.4" height="10" fill="#f1e05a"/>
+<rect x="437.3" y="70" width="5.7" height="10" fill="#336790"/>
 <rect x="442.9" y="70" width="4.8" height="10" fill="#3572A5"/>
-<rect x="447.7" y="70" width="8.3" height="10" fill="#8b949e"/>
+<rect x="447.8" y="70" width="8.2" height="10" fill="#8b949e"/>
 </g>
 <circle cx="30" cy="104" r="5" fill="#3178c6"/>
 <text x="42" y="108" class="l">TypeScript <tspan class="p">79,8%</tspan></text>
