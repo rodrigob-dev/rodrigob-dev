@@ -3,7 +3,7 @@
 <p><b>Computer Science (Minor in EE) @ Columbia University</b> &nbsp;·&nbsp; Software Engineering Intern @ Zoox Smart Data</p>
 
 <p>
-  Computer Engineering student at Columbia University (Fu Foundation School of Engineering and Applied Science), graduating 2029. Working at the intersection of software and data — currently building data integrations in Python/FastAPI at Zoox Smart Data. Interested in software engineering, data infrastructure, and systems.
+  CS student at Columbia University (Fu Foundation School of Engineering and Applied Science), graduating 2029. Interested in software engineering, startups and edtech.
 </p>
 
 <div align="center">
