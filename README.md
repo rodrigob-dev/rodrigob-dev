@@ -1,6 +1,6 @@
 <h1>Rodrigo Luna Barcelos</h1>
 
-<p><b>Computer Engineering @ Columbia University</b> &nbsp;·&nbsp; Data Engineering Intern @ Zoox Smart Data</p>
+<p><b>Computer Science (Minor in EE) @ Columbia University</b> &nbsp;·&nbsp; Software Engineering Intern @ Zoox Smart Data</p>
 
 <p>
   Computer Engineering student at Columbia University (Fu Foundation School of Engineering and Applied Science), graduating 2029. Working at the intersection of software and data — currently building data integrations in Python/FastAPI at Zoox Smart Data. Interested in software engineering, data infrastructure, and systems.
