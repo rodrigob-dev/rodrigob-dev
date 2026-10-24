@@ -5,18 +5,18 @@
 <text x="24" y="48" class="c">includes private repos</text>
 <clipPath id="bar"><rect x="24" y="70" width="432" height="10" rx="5"/></clipPath>
 <g clip-path="url(#bar)">
-<rect x="24.0" y="70" width="247.9" height="10" fill="#3178c6"/>
-<rect x="271.9" y="70" width="88.3" height="10" fill="#F05138"/>
-<rect x="360.2" y="70" width="42.1" height="10" fill="#e34c26"/>
-<rect x="402.3" y="70" width="25.2" height="10" fill="#f1e05a"/>
-<rect x="427.5" y="70" width="12.9" height="10" fill="#563d7c"/>
-<rect x="440.4" y="70" width="5.3" height="10" fill="#8b949e"/>
+<rect x="24.0" y="70" width="248.5" height="10" fill="#3178c6"/>
+<rect x="272.5" y="70" width="88.1" height="10" fill="#F05138"/>
+<rect x="360.6" y="70" width="41.9" height="10" fill="#e34c26"/>
+<rect x="402.5" y="70" width="25.1" height="10" fill="#f1e05a"/>
+<rect x="427.6" y="70" width="12.9" height="10" fill="#563d7c"/>
+<rect x="440.5" y="70" width="5.3" height="10" fill="#8b949e"/>
 <rect x="445.7" y="70" width="10.3" height="10" fill="#8b949e"/>
 </g>
 <circle cx="30" cy="104" r="5" fill="#3178c6"/>
-<text x="42" y="108" class="l">TypeScript <tspan class="p">57,4%</tspan></text>
+<text x="42" y="108" class="l">TypeScript <tspan class="p">57,5%</tspan></text>
 <circle cx="250" cy="104" r="5" fill="#F05138"/>
-<text x="262" y="108" class="l">Swift <tspan class="p">20,5%</tspan></text>
+<text x="262" y="108" class="l">Swift <tspan class="p">20,4%</tspan></text>
 <circle cx="30" cy="132" r="5" fill="#e34c26"/>
 <text x="42" y="136" class="l">HTML <tspan class="p">9,7%</tspan></text>
 <circle cx="250" cy="132" r="5" fill="#f1e05a"/>
